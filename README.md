@@ -1,13 +1,13 @@
 # Bataille Navale
 
-H1DESCRIPTIF DU PROJET<br>
-H26.1	Généralités
-Il s’agit d’un jeu implémentant les règles de la bataille navale. Ce projet a pour objectifs de : <br>
-●	Entrainer les apprenants à la réalisation d’un logiciel sur la base d’un cahier des charges
-●	Offrir un aperçu aux apprenants du travail certificatif du CFC (TPI)
-●	Réaliser de A-Z un programme en C.
-6.2	Fonctionnalités minimales
-Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :
-Version 0.1 (pour le xxx 2018) :
-•	Jouer à la bataille navale alors que la position des bateaux est codée dans le programme
-•	Afficher l’aide du jeu
+#DESCRIPTIF DU PROJET<br>
+##6.1	Généralités<br>
+Il s’agit d’un jeu implémentant les règles de la bataille navale.<br>Ce projet a pour objectifs de :<br>
+●	Entrainer les apprenants à la réalisation d’un logiciel sur la base d’un cahier des charges<br>
+●	Offrir un aperçu aux apprenants du travail certificatif du CFC (TPI)<br>
+●	Réaliser de A-Z un programme en C.<br>
+##6.2	Fonctionnalités minimales<br>
+Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :<br>
+Version 0.1 (pour le xxx 2018) :<br>
+•	Jouer à la bataille navale alors que la position des bateaux est codée dans le programme<br>
+•	Afficher l’aide du jeu<br>
