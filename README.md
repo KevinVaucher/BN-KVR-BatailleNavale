@@ -1,5 +1,5 @@
 # Bataille Navale
-##Jeu développé par Kevin Vaucher
+## Jeu développé par Kevin Vaucher
 # DESCRIPTIF DU PROJET<br>
 ## 6.1	Généralités<br>
 Il s’agit d’un jeu implémentant les règles de la bataille navale.<br>Ce projet a pour objectifs de :<br>
