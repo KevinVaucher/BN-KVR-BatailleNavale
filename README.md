@@ -8,6 +8,6 @@ Il s’agit d’un jeu implémentant les règles de la bataille navale.<br>Ce pr
 ●	Réaliser de A-Z un programme en C.<br>
 ## 6.2	Fonctionnalités minimales<br>
 Le type d’application C demandé doit offrir les fonctionnalités minimales suivantes :<br>
-Version 0.1 (pour le xxx 2018) :<br>
+Version 0.1 (pour le xxx 2019) :<br>
 •	Jouer à la bataille navale alors que la position des bateaux est codée dans le programme<br>
 •	Afficher l’aide du jeu<br>
