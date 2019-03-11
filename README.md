@@ -1,7 +1,7 @@
 # Bataille Navale
 
-6	DESCRIPTIF DU PROJET
-6.1	Généralités
+H1DESCRIPTIF DU PROJET<br>
+H26.1	Généralités
 Il s’agit d’un jeu implémentant les règles de la bataille navale. Ce projet a pour objectifs de : <br>
 ●	Entrainer les apprenants à la réalisation d’un logiciel sur la base d’un cahier des charges
 ●	Offrir un aperçu aux apprenants du travail certificatif du CFC (TPI)
