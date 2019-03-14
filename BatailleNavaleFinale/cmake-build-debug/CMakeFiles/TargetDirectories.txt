@@ -1,3 +1,0 @@
-C:/BatailleNavaleSprint1/cmake-build-debug/CMakeFiles/BatailleNavaleSprint1.dir
-C:/BatailleNavaleSprint1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/BatailleNavaleSprint1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
