@@ -1,0 +1,3 @@
+"C:\Program Files (x86)\CLion\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Grillevide.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\Grillevide.dir/objects.a @CMakeFiles\Grillevide.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Grillevide.dir/objects.a -Wl,--no-whole-archive  -o Grillevide.exe -Wl,--out-implib,libGrillevide.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Grillevide.dir\linklibs.rsp
