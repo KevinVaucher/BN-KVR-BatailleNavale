@@ -1,0 +1,3 @@
+C:/CProjects/MA-20/BatailleNavale/BatailleNavaleFinale/cmake-build-debug/CMakeFiles/BatailleNavaleFinale.dir
+C:/CProjects/MA-20/BatailleNavale/BatailleNavaleFinale/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/CProjects/MA-20/BatailleNavale/BatailleNavaleFinale/cmake-build-debug/CMakeFiles/rebuild_cache.dir
