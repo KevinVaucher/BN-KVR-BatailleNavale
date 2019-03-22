@@ -1,3 +1,0 @@
-"C:\Program Files (x86)\CLion\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Afficher_aide.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Afficher_aide.dir/objects.a @CMakeFiles\Afficher_aide.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\Afficher_aide.dir/objects.a -Wl,--no-whole-archive  -o Afficher_aide.exe -Wl,--out-implib,libAfficher_aide.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Afficher_aide.dir\linklibs.rsp
