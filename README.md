@@ -8,7 +8,7 @@ Notre but est de créer un jeu Bataille Navale grâce à CLion.
 
 Vous aurez besoin de :
 
-- BatailleNavale disponible dans le repository
+- BatailleNavaleFinale disponible dans le repository
 - CLion
 
 
