@@ -14,6 +14,6 @@ Vous aurez besoin de :
 
 ## Exécution
 
-1. Allez dans le dossier 'BatailleNavaleFinale'
-1. Allez dans le dossier 'cmake-build-debug'
-1. Exécutez le fichier 'BatailleNavaleFinale.exe'
+1. Allez dans le dossier BatailleNavaleFinale
+1. Allez dans le dossier cmake-build-debug
+1. Exécutez le fichier `BatailleNavaleFinale.exe`
