@@ -1,5 +1,10 @@
+// Programme : Bataille Navale
+// Auteur : Kevin Vaucher
+// Date : 05.04.2019
+
 #include <stdio.h>
 #include <windows.h>
+#include <conio.h>
 
 #pragma execution_character_set( "utf-8")
 
@@ -18,29 +23,27 @@
 #define SHTB 194 // ┬, Single Horizontal Top Border
 #define SC   197 // ┼, Single Center
 
-int grille[GRILLE][GRILLE] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+int hit[5] = {0, 0, 0, 0, 0};
+int grille[GRILLE][GRILLE] = {{3, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                              {3, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                              {3, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+                              {0, 0, 0, 0, 4, 0, 0, 0, 0, 0},
+                              {0, 0, 0, 0, 4, 0, 0, 0, 0, 0},
+                              {0, 0, 0, 0, 4, 0, 0, 0, 2, 0},
+                              {0, 0, 0, 0, 4, 0, 0, 0, 2, 0},
                               {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                              {0, 0, -1, 0, 1, 0, 0, 0, 0, 0},
-                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-                              {14, 0, 0, 0, 0, 0, 23, 0, 0, 0},
-                              {4, 0, 0, 0, 2, 0, 23, 0, 0, 0},
-                              {4, 0, 0, 0, 2, 0, 23, 0, 0, 0},
-                              {4, 0, 0, 0, 0, 0, 0, -1, 0, 0},
-                              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
+                              {0, 2, 0, 0, 0, 0, 0, 0, 0, 0},
+                              {0, 2, 0, 0, 0, 0, 0, 0, 0, 0}};
 
-int Numbers = 1;
-int Verticalborders;
-int colonne=0;
-int ligne=0;
+int colonne = 0;
+int ligne = 0;
 
 // Fonction pour les barres verticales, les chiffres et le tableau
-void VerticalBorders() {
-    printf("%2d ", Numbers);
-    for (int i = 0; i < 11; i++) {
+void VerticalBorders(int Numbers) {
+    printf("%2d ", Numbers + 1);
+    for (int i = 0; i < SIZE; i++) {
         printf("%c ", SVSB);
-        switch(grille[ligne][colonne-1]){
-
+        switch (grille[Numbers][i]) {
             case -1:
                 printf("O ");
                 break;
@@ -60,18 +63,12 @@ void VerticalBorders() {
             case 23:
             case 24:
                 printf("X ");
+            default:
+                printf("  ");
                 break;
         }
-        colonne++;
-//        if(colonne==10){
-//            ligne++;
-//            colonne=0;
-//        }
-    }
-    ligne++;
-    colonne=0;
-    Numbers++;
 
+    }
 }
 
 // Fonction pour les barres horizontales
@@ -79,7 +76,7 @@ void HorizontalBorders(int Horizontalmiddle) {
     printf("\n");
     printf("   ");
     printf("%c", SVLB);
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < SIZE; i++) {
         printf("%c%c%c%c", SHSB, SHSB, SHSB, SC);
     }
     printf("%c%c%c%c\n", SHSB, SHSB, SHSB, SVRB);
@@ -87,11 +84,10 @@ void HorizontalBorders(int Horizontalmiddle) {
 
 // Fonction pour la dernière ligne
 void BottomBorder(int Bottom) {
-
     printf("\n");
     printf("   ");
     printf("%c", SBLC); // Coin en bas à gauche
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < SIZE; i++) {
         printf("%c%c%c%c", SHSB, SHSB, SHSB, SHBB);
     }
     printf("%c%c%c%c\n", SHSB, SHSB, SHSB, SBRC);
@@ -102,70 +98,69 @@ void TopBorder(int Top) {
     printf("     A   B   C   D   E   F   G   H   I   J\n");
     printf("   ");
     printf("%c", STLC); // Coin en haut à gauche
-    for (int i = 0; i < 9; i++) {
+    for (int i = 0; i < SIZE; i++) {
         printf("%c%c%c%c", SHSB, SHSB, SHSB, SHTB);
     }
     printf("%c%c%c%c", SHSB, SHSB, SHSB, STRC);
     printf("\n");
-    VerticalBorders();
 }
 
 void Playgame() {
     int gagner = 0;
     while (gagner != 1) {
         // Afficher la grille
-        for (int i = 0; i < SIZE; i++) {
+        printf("Legende de la grille :\n\nO : Tir a l'eau\n- : Tir touche\nX : Bateau coule\n\n");
+        for (int i = 0; i <= SIZE; i++) {
             if (i < 1) { // Première ligne
                 TopBorder(SIZE);
+            } else {
+                HorizontalBorders(SIZE);
             }
-            HorizontalBorders(SIZE);
-
-            VerticalBorders();
+            VerticalBorders(i);
         }
         BottomBorder(SIZE);
         // Demander les coordonnées de tir
         char tir[5];
-        int hit[5];
-        printf("\nChoisissez une cible : ");
-        scanf("%s", &tir);
-        int ligne = tir[0] - 65;
-        int colonne = tir[1] - 49;
+        do {
+            printf("Veuillez mettre la coordonnee sous cette forme : A2");
+            printf("\nChoisissez une cible : ");
+            scanf("%s", &tir);
+            colonne = tir[0] - 65;
+            ligne = tir[1] - 49;
+
+
+        } while (tir[0] <= 64 || tir[0] >= 75);
+        printf("Vous avez tire sur %d////%d", ligne, colonne);
+        // Tir manqué
         if (grille[ligne][colonne] == 0) {
             printf("\nA l'eau !\n\n");
-            grille[ligne][colonne] = 10;
+            grille[ligne][colonne] = -1;
         }
-        if (grille[ligne][colonne] == 2) {
+        // Tir touché
+        if (grille[ligne][colonne] >= 1 && grille[ligne][colonne] < 10) {
             printf("\nTouche !\n\n");
-            grille[ligne][colonne] = 11;
+            grille[ligne][colonne] += 10;
         }
-                                                                        //        if (grille[ligne][colonne] ){
-                                                                        //            printf("\nTouche-coule !\n\n");
-                                                                        //            grille[ligne][colonne] = 1;
-                                                                        //         }
-}
-        // Appliquer les tirs sur le modèle
+       }
     }
+    // Appliquer les tirs sur le modèle
 
 
 int main() {
-
     int Affichageaide;
     int Top;
     int Verticalmiddle;
     int Horizontalmiddle;
     int Bottom;
-    char tir[5];
-
+    char tir[5] ;
     // Afficher les règles et demander pour passer
     printf("\nBonjour, voici les regles de la bataille navale :\n\n");
     printf("1. Chaque joueur peut tirer un coup par tour\n");
     printf("2. Le jeu vous signalera si vous touchez, ratez ou faites couler un bateau\n");
     printf("3. Il faut neutraliser tout les bateaux pour remporter la victoire !\n\n");
     printf("BONNE CHANCE !\n\n");
-
     printf("Appuyez sur ENTREE pour passer\n");
     getchar();
-
     // Présenter la grille et demander une case à attaquer
     Playgame();
 
