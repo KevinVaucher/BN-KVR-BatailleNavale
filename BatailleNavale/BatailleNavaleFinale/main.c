@@ -41,7 +41,7 @@ int ligne = 0;
 // Fonction pour les barres verticales, les chiffres et le tableau
 void VerticalBorders(int Numbers) {
     printf("%2d ", Numbers + 1);
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < SIZE+2; i++) {
         printf("%c ", SVSB);
         switch (grille[Numbers][i]) {
             case -1:
