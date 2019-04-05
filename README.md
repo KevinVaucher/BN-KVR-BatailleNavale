@@ -14,6 +14,7 @@ Vous aurez besoin de :
 
 ## Exécution
 
+1. Télécharger le fichier.zip du dernier release
 1. Allez dans le dossier BatailleNavaleFinale
 1. Allez dans le dossier cmake-build-debug
 1. Exécutez le fichier `BatailleNavaleFinale.exe`
